@@ -1,0 +1,24 @@
+version: "2.2"
+
+services:
+  jova-news:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 85:80
+    volumes:
+      - ".:/var/www/html"
+    environment:
+      DB_HOST: 172.22.31.36
+      DB_USERNAME: admin
+      DB_PORT: 3306
+      DB_DATABASE: jova-news
+      DB_PASSWORD: oKYzLHPBjRFR
+    # environment:
+    #   DB_HOST: db-a239fj.pmberjaya.com
+    #   DB_USERNAME: trustone
+    #   DB_PORT: 25060
+    #   DB_DATABASE: trustone
+    #   DB_PASSWORD: ft39sejhzpbehfbq

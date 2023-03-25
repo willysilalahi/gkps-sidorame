@@ -1,0 +1,78 @@
+2023-02-14 03:54:24,003 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-02-14 03:54:24,006 INFO supervisord started with pid 1
+2023-02-14 03:54:25,011 INFO spawned: 'crond_00' with pid 8
+2023-02-14 03:54:25,016 INFO spawned: 'google-batch-daemon' with pid 9
+2023-02-14 03:54:25,020 INFO spawned: 'laravel-worker_00' with pid 10
+2023-02-14 03:54:25,025 INFO spawned: 'nginx' with pid 11
+2023-02-14 03:54:25,030 INFO spawned: 'php-fpm' with pid 12
+2023-02-14 03:54:25,052 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-14 03:54:26,096 INFO success: crond_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-14 03:54:26,098 INFO spawned: 'google-batch-daemon' with pid 52
+2023-02-14 03:54:26,099 INFO success: laravel-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-14 03:54:26,099 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-14 03:54:26,099 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-14 03:54:26,126 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-14 03:54:28,131 INFO spawned: 'google-batch-daemon' with pid 53
+2023-02-14 03:54:28,157 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-14 03:54:31,165 INFO spawned: 'google-batch-daemon' with pid 54
+2023-02-14 03:54:31,200 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-14 03:54:32,201 INFO gave up: google-batch-daemon entered FATAL state, too many start retries too quickly
+2023-02-15 01:17:20,229 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-02-15 01:17:20,269 INFO supervisord started with pid 1
+2023-02-15 01:17:21,338 INFO spawned: 'crond_00' with pid 7
+2023-02-15 01:17:21,344 INFO spawned: 'google-batch-daemon' with pid 8
+2023-02-15 01:17:21,350 INFO spawned: 'laravel-worker_00' with pid 9
+2023-02-15 01:17:21,368 INFO spawned: 'nginx' with pid 10
+2023-02-15 01:17:21,376 INFO spawned: 'php-fpm' with pid 11
+2023-02-15 01:17:22,503 INFO success: crond_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:22,503 INFO success: google-batch-daemon entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:22,503 INFO success: laravel-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:22,503 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:22,503 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:22,515 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:22,532 INFO spawned: 'google-batch-daemon' with pid 13
+2023-02-15 01:17:22,568 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:23,629 INFO spawned: 'google-batch-daemon' with pid 46
+2023-02-15 01:17:23,660 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:25,664 INFO spawned: 'google-batch-daemon' with pid 47
+2023-02-15 01:17:26,865 INFO success: google-batch-daemon entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:26,866 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:27,871 INFO spawned: 'google-batch-daemon' with pid 54
+2023-02-15 01:17:27,941 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:28,952 INFO spawned: 'google-batch-daemon' with pid 55
+2023-02-15 01:17:30,051 INFO success: google-batch-daemon entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:30,051 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:31,054 INFO spawned: 'google-batch-daemon' with pid 56
+2023-02-15 01:17:31,080 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:32,087 INFO spawned: 'google-batch-daemon' with pid 57
+2023-02-15 01:17:32,169 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:34,175 INFO spawned: 'google-batch-daemon' with pid 58
+2023-02-15 01:17:34,202 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:37,209 INFO spawned: 'google-batch-daemon' with pid 59
+2023-02-15 01:17:37,249 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:38,251 INFO gave up: google-batch-daemon entered FATAL state, too many start retries too quickly
+2023-02-15 01:17:39,253 WARN received SIGQUIT indicating exit request
+2023-02-15 01:17:39,253 INFO waiting for crond_00, laravel-worker_00, nginx, php-fpm to die
+2023-02-15 01:17:39,267 INFO stopped: php-fpm (exit status 0)
+2023-02-15 01:17:39,396 INFO stopped: nginx (exit status 0)
+2023-02-15 01:17:39,398 INFO stopped: laravel-worker_00 (terminated by SIGTERM)
+2023-02-15 01:17:40,401 INFO stopped: crond_00 (terminated by SIGTERM)
+2023-02-15 01:17:43,203 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-02-15 01:17:43,206 INFO supervisord started with pid 1
+2023-02-15 01:17:44,209 INFO spawned: 'crond_00' with pid 7
+2023-02-15 01:17:44,212 INFO spawned: 'google-batch-daemon' with pid 8
+2023-02-15 01:17:44,215 INFO spawned: 'laravel-worker_00' with pid 9
+2023-02-15 01:17:44,217 INFO spawned: 'nginx' with pid 10
+2023-02-15 01:17:44,220 INFO spawned: 'php-fpm' with pid 11
+2023-02-15 01:17:44,240 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:45,216 INFO success: crond_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:45,216 INFO success: laravel-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:45,216 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:45,220 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-02-15 01:17:45,274 INFO spawned: 'google-batch-daemon' with pid 51
+2023-02-15 01:17:45,345 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:47,617 INFO spawned: 'google-batch-daemon' with pid 52
+2023-02-15 01:17:47,644 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:50,651 INFO spawned: 'google-batch-daemon' with pid 53
+2023-02-15 01:17:50,693 INFO exited: google-batch-daemon (exit status 1; not expected)
+2023-02-15 01:17:51,695 INFO gave up: google-batch-daemon entered FATAL state, too many start retries too quickly

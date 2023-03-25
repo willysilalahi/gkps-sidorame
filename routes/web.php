@@ -1,0 +1,76 @@
+<?php
+
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthorizationController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RoleController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return redirect('dashboard');
+});
+
+
+//Auth
+Route::get('/login', [AuthController::class, 'viewlogin'])->name('login');
+Route::post('/login', [AuthController::class, 'proccesslogin']);
+Route::get('/logout', [AuthController::class, 'proccesslogout']);
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::prefix('/dashboard')->group(function () {
+        Route::get('/', [DashboardController::class, 'view'])->name('dashboard_view');
+    });
+
+    Route::prefix('/authorization')->group(function () {
+        Route::get('/', [AuthorizationController::class, 'index'])->name('authorization_view');
+        Route::get('/data/{users_role}', [AuthorizationController::class, 'data'])->name('authorization_view_data');
+        Route::post('/', [AuthorizationController::class, 'update'])->name('authorization_add');
+    });
+
+    Route::prefix('/role')->group(function () {
+        Route::get('/', [RoleController::class, 'view'])->name('role_view_index');
+        Route::get('/data', [RoleController::class, 'data'])->name('role_view_data');
+        Route::get('/add', [RoleController::class, 'addView'])->name('role_add');
+        Route::get('/edit/{id}', [RoleController::class, 'editView'])->name('role_edit');
+        Route::post('/', [RoleController::class, 'addPost'])->name('role_add_post');
+        Route::patch('/{id}', [RoleController::class, 'editPatch'])->name('role_edit_patch');
+        Route::delete('/{id}', [RoleController::class, 'delete'])->name('role_delete');
+    });
+
+    Route::prefix('/admin')->group(function () {
+        Route::get('/', [AdminController::class, 'view'])->name('admin_view_index');
+        Route::get('/data', [AdminController::class, 'data'])->name('admin_view');
+        Route::get('/trash', [AdminController::class, 'trash'])->name('admin_view');
+        Route::get('/add', [AdminController::class, 'addView'])->name('admin_add');
+        Route::get('/edit/{id}', [AdminController::class, 'editView'])->name('admin_edit');
+        Route::post('/add', [AdminController::class, 'addPost'])->name('admin_add_post');
+        Route::post('/edit/{id}', [AdminController::class, 'editPatch'])->name('admin_edit_patch');
+        Route::patch('/restore/{id}', [AdminController::class, 'restore'])->name('admin_edit_restore');
+        Route::patch('/reset-password/{id}', [AdminController::class, 'resetPassword'])->name('admin_edit_reset');
+        Route::delete('/{id}', [AdminController::class, 'delete'])->name('admin_delete');
+        Route::delete('/destroy/{id}', [AdminController::class, 'destroy'])->name('admin_delete');
+    });
+
+    Route::prefix('/news')->group(function () {
+        Route::get('/', [DashboardController::class, 'comingSoon'])->name('news_view_index');
+    });
+    Route::prefix('/news-category')->group(function () {
+        Route::get('/', [DashboardController::class, 'comingSoon'])->name('news-category_view_index');
+    });
+    Route::prefix('/activity')->group(function () {
+        Route::get('/', [DashboardController::class, 'comingSoon'])->name('activity_view_index');
+    });
+});

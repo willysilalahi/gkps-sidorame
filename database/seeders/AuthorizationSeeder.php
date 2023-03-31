@@ -19,7 +19,7 @@ class AuthorizationSeeder extends Seeder
         $arr_data = [];
 
         /*
-        Group Menu : 2, 6
+        Group Menu : 5
         */
         $role = RoleModel::all();
         foreach ($role as $i) {
@@ -32,18 +32,11 @@ class AuthorizationSeeder extends Seeder
                         'authorization_types_id' => $j
                     ];
             }
-            //Grup menu id = 2
-            $arr_data[] =
-                [
-                    'roles_id' => $i->id,
-                    'menus_id' => 2,
-                    'authorization_types_id' => 1
-                ];
             //Grup menu id = 6
             $arr_data[] =
                 [
                     'roles_id' => $i->id,
-                    'menus_id' => 6,
+                    'menus_id' => 5,
                     'authorization_types_id' => 1
                 ];
         }
@@ -58,6 +51,26 @@ class AuthorizationSeeder extends Seeder
             //============================= Master =================================
             [
                 'roles_id' => 1,
+                'menus_id' => 2,
+                'authorization_types_id' => 1
+            ],
+            [
+                'roles_id' => 1,
+                'menus_id' => 2,
+                'authorization_types_id' => 2
+            ],
+            [
+                'roles_id' => 1,
+                'menus_id' => 2,
+                'authorization_types_id' => 3
+            ],
+            [
+                'roles_id' => 1,
+                'menus_id' => 2,
+                'authorization_types_id' => 4
+            ],
+            [
+                'roles_id' => 1,
                 'menus_id' => 3,
                 'authorization_types_id' => 1
             ],
@@ -118,6 +131,26 @@ class AuthorizationSeeder extends Seeder
             ],
             [
                 'roles_id' => 1,
+                'menus_id' => 6,
+                'authorization_types_id' => 1
+            ],
+            [
+                'roles_id' => 1,
+                'menus_id' => 6,
+                'authorization_types_id' => 2
+            ],
+            [
+                'roles_id' => 1,
+                'menus_id' => 6,
+                'authorization_types_id' => 3
+            ],
+            [
+                'roles_id' => 1,
+                'menus_id' => 6,
+                'authorization_types_id' => 4
+            ],
+            [
+                'roles_id' => 1,
                 'menus_id' => 7,
                 'authorization_types_id' => 1
             ],
@@ -154,26 +187,6 @@ class AuthorizationSeeder extends Seeder
             [
                 'roles_id' => 1,
                 'menus_id' => 8,
-                'authorization_types_id' => 4
-            ],
-            [
-                'roles_id' => 1,
-                'menus_id' => 9,
-                'authorization_types_id' => 1
-            ],
-            [
-                'roles_id' => 1,
-                'menus_id' => 9,
-                'authorization_types_id' => 2
-            ],
-            [
-                'roles_id' => 1,
-                'menus_id' => 9,
-                'authorization_types_id' => 3
-            ],
-            [
-                'roles_id' => 1,
-                'menus_id' => 9,
                 'authorization_types_id' => 4
             ],
 
@@ -220,32 +233,11 @@ class AuthorizationSeeder extends Seeder
                 'menus_id' => 4,
                 'authorization_types_id' => 4
             ],
-            [
-                'roles_id' => 2,
-                'menus_id' => 5,
-                'authorization_types_id' => 1
-            ],
-            [
-                'roles_id' => 2,
-                'menus_id' => 5,
-                'authorization_types_id' => 2
-            ],
-            [
-                'roles_id' => 2,
-                'menus_id' => 5,
-                'authorization_types_id' => 3
-            ],
-            [
-                'roles_id' => 2,
-                'menus_id' => 5,
-                'authorization_types_id' => 4
-            ],
 
 
 
 
-
-            //============================= Operational =================================
+            //============================= Jemaat =================================
             [
                 'roles_id' => 3,
                 'menus_id' => 3,

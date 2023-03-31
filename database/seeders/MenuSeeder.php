@@ -26,30 +26,22 @@ class MenuSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'name' => 'News Panel',
-                'route' => null,
-                'icon' => 'bi bi-newspaper',
+                'name' => 'Keluarga',
+                'route' => 'family',
+                'icon' => 'bi bi-box2-fill',
                 'is_child' => 0,
                 'parent_id' => null
             ],
             [
                 'id' => 3,
-                'name' => 'News',
-                'route' => 'news',
-                'icon' => null,
-                'is_child' => 1,
-                'parent_id' => 2
+                'name' => 'Jemaat',
+                'route' => 'person',
+                'icon' => 'bi bi-people-fill',
+                'is_child' => 0,
+                'parent_id' => null
             ],
             [
                 'id' => 4,
-                'name' => 'News Category',
-                'route' => 'news-category',
-                'icon' => null,
-                'is_child' => 1,
-                'parent_id' => 2
-            ],
-            [
-                'id' => 5,
                 'name' => 'Activity',
                 'route' => 'activity',
                 'icon' => 'bi bi-activity',
@@ -57,7 +49,7 @@ class MenuSeeder extends Seeder
                 'parent_id' => null
             ],
             [
-                'id' => 6,
+                'id' => 5,
                 'name' => 'Setting',
                 'route' => null,
                 'icon' => 'bi bi-gear',
@@ -65,28 +57,28 @@ class MenuSeeder extends Seeder
                 'parent_id' => null
             ],
             [
-                'id' => 7,
+                'id' => 6,
                 'name' => 'Authorization',
                 'route' => 'authorization',
                 'icon' => null,
                 'is_child' => 1,
-                'parent_id' => 6
+                'parent_id' => 5
             ],
             [
-                'id' => 8,
+                'id' => 7,
                 'name' => 'Role',
                 'route' => 'role',
                 'icon' => null,
                 'is_child' => 1,
-                'parent_id' => 6
+                'parent_id' => 5
             ],
             [
-                'id' => 9,
+                'id' => 8,
                 'name' => 'Admin',
                 'route' => 'admin',
                 'icon' => null,
                 'is_child' => 1,
-                'parent_id' => 6
+                'parent_id' => 5
             ],
         ]);
     }

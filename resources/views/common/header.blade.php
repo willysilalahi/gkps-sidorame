@@ -6,13 +6,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ Helper::changeRouteName()['name'] }} - Jova News</title>
+    <title>{{ Helper::changeRouteName()['name'] }} - GKPS Sidorame</title>
 
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('images/jova-icon.png') }}" rel="icon">
+    <link href="{{ asset('images/gkps-icon.png') }}" rel="icon">
     <link href="{{ asset('template/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->

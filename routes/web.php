@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FamilyController;
+use App\Http\Controllers\PersonController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +32,7 @@ Route::post('/login', [AuthController::class, 'proccesslogin']);
 Route::get('/logout', [AuthController::class, 'proccesslogout']);
 
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'authorization']], function () {
     Route::prefix('/dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'view'])->name('dashboard_view');
     });
@@ -64,13 +67,15 @@ Route::group(['middleware' => ['auth']], function () {
         Route::delete('/destroy/{id}', [AdminController::class, 'destroy'])->name('admin_delete');
     });
 
-    Route::prefix('/news')->group(function () {
-        Route::get('/', [DashboardController::class, 'comingSoon'])->name('news_view_index');
+    Route::prefix('/family')->group(function () {
+        Route::get('/', [FamilyController::class, 'view'])->name('family_view');
     });
-    Route::prefix('/news-category')->group(function () {
-        Route::get('/', [DashboardController::class, 'comingSoon'])->name('news-category_view_index');
+
+    Route::prefix('/person')->group(function () {
+        Route::get('/', [PersonController::class, 'view'])->name('person_view');
     });
+
     Route::prefix('/activity')->group(function () {
-        Route::get('/', [DashboardController::class, 'comingSoon'])->name('activity_view_index');
+        Route::get('/', [ActivityController::class, 'view'])->name('activity_view');
     });
 });

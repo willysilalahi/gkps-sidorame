@@ -44,8 +44,8 @@ class AdminSeeder extends Seeder
             [
                 'id' => 3,
                 'roles_id' => 3,
-                'name' => 'Gery Darmawan',
-                'username' => 'gery',
+                'name' => 'Jemaat Sidorame',
+                'username' => 'jemaat',
                 'password' => bcrypt('12345'),
                 'profile_image_path' => 'admin/admin.png',
                 'is_active' => 1,

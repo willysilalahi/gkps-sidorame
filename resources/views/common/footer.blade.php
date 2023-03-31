@@ -1,7 +1,7 @@
 <!-- ======= Footer ======= -->
 <footer id="footer" class="footer">
     <div class="copyright">
-        Develop by <strong>Jova Software</strong> - 2022
+        Develop by <strong>Anonymous</strong> - 2023
     </div>
 </footer><!-- End Footer -->
 

@@ -26,7 +26,7 @@ class RoleSeeder extends Seeder
             ],
             [
                 'id' => 3,
-                'name' => 'Operational'
+                'name' => 'Jemaat'
             ]
         ]);
     }

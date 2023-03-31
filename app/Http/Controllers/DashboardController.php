@@ -17,4 +17,10 @@ class DashboardController extends Controller
         $content = view('dashboard.coming-soon');
         return view('main', ['content' => $content]);
     }
+
+    function test()
+    {
+        $content = view('dashboard.coming-soon');
+        return view('main', ['content' => $content]);
+    }
 }

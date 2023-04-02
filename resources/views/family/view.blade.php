@@ -16,7 +16,9 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="" class="btn btn-primary float-right">Tambah</a>
+                        @add_access
+                            <a href="" class="btn btn-primary float-right">Tambah</a>
+                        @endadd_access
                     </div>
                     <div class="card-body">
                         <table class="table datatable">
@@ -40,9 +42,13 @@
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        <button class="btn btn-sm btn-danger" type="button"><i
-                                                class="bi bi-trash3"></i></button>
+                                        @edit_access
+                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
+                                        @endedit_access
+                                        @delete_access
+                                            <button class="btn btn-sm btn-danger" type="button"><i
+                                                    class="bi bi-trash3"></i></button>
+                                        @enddelete_access
                                     </td>
                                 </tr>
                                 <tr>
@@ -54,9 +60,13 @@
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        <button class="btn btn-sm btn-danger" type="button"><i
-                                                class="bi bi-trash3"></i></button>
+                                        @edit_access
+                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
+                                        @endedit_access
+                                        @delete_access
+                                            <button class="btn btn-sm btn-danger" type="button"><i
+                                                    class="bi bi-trash3"></i></button>
+                                        @enddelete_access
                                     </td>
                                 </tr>
                                 <tr>
@@ -68,9 +78,13 @@
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        <button class="btn btn-sm btn-danger" type="button"><i
-                                                class="bi bi-trash3"></i></button>
+                                        @edit_access
+                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
+                                        @endedit_access
+                                        @delete_access
+                                            <button class="btn btn-sm btn-danger" type="button"><i
+                                                    class="bi bi-trash3"></i></button>
+                                        @enddelete_access
                                     </td>
                                 </tr>
                                 <tr>
@@ -82,9 +96,13 @@
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        <button class="btn btn-sm btn-danger" type="button"><i
-                                                class="bi bi-trash3"></i></button>
+                                        @edit_access
+                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
+                                        @endedit_access
+                                        @delete_access
+                                            <button class="btn btn-sm btn-danger" type="button"><i
+                                                    class="bi bi-trash3"></i></button>
+                                        @enddelete_access
                                     </td>
                                 </tr>
                                 <tr>
@@ -96,9 +114,13 @@
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        <button class="btn btn-sm btn-danger" type="button"><i
-                                                class="bi bi-trash3"></i></button>
+                                        @edit_access
+                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
+                                        @endedit_access
+                                        @delete_access
+                                            <button class="btn btn-sm btn-danger" type="button"><i
+                                                    class="bi bi-trash3"></i></button>
+                                        @enddelete_access
                                     </td>
                                 </tr>
                                 <tr>
@@ -110,9 +132,13 @@
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        <button class="btn btn-sm btn-danger" type="button"><i
-                                                class="bi bi-trash3"></i></button>
+                                        @edit_access
+                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
+                                        @endedit_access
+                                        @delete_access
+                                            <button class="btn btn-sm btn-danger" type="button"><i
+                                                    class="bi bi-trash3"></i></button>
+                                        @enddelete_access
                                     </td>
                                 </tr>
                             </tbody>

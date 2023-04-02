@@ -2,9 +2,9 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="#" class="font-weight-900 logo d-flex align-items-center">
-            GKPS SIDORAME
-        </a>
+        <span class="font-weight-900 logo d-flex align-items-center">
+            <strong>GKPS SIDORAME <i class="bi bi-house-fill"></i></strong>
+        </span>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 

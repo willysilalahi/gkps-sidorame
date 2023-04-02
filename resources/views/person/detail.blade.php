@@ -1,11 +1,11 @@
  <main id="main" class="main">
 
      <div class="pagetitle">
-         <h1>Keluarga</h1>
+         <h1>Jemaat</h1>
          <nav>
              <ol class="breadcrumb">
                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                 <li class="breadcrumb-item">Keluarga</li>
+                 <li class="breadcrumb-item">Jemaat</li>
                  <li class="breadcrumb-item active">Detail</li>
              </ol>
          </nav>
@@ -15,7 +15,7 @@
              <div class="col-lg-12">
                  <div class="card">
                      <div class="card-body">
-                         <h5 class="card-title">Detail Keluarga</h5>
+                         <h5 class="card-title">Detail Jemaat</h5>
 
                          <!-- Vertical Form -->
                          <form class="row g-3">

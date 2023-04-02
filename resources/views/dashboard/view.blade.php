@@ -122,7 +122,7 @@
 
                     <!-- Revenue Card -->
                     <div class="col-xxl-4 col-md-3">
-                        <div class="card info-card revenue-card">
+                        <div class="card info-card customers-card">
                             <div class="card-body">
                                 <h5 class="card-title">Seksi Namaposo</h5>
 
@@ -132,7 +132,7 @@
                                         <i class="bi bi-person-fill"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>64</h6>
+                                        <h6>71</h6>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
 
                     <!-- Revenue Card -->
                     <div class="col-xxl-4 col-md-3">
-                        <div class="card info-card revenue-card">
+                        <div class="card info-card person-card">
                             <div class="card-body">
                                 <h5 class="card-title">Seksi S.Minggu</h5>
 

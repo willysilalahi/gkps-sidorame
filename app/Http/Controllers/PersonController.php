@@ -19,4 +19,11 @@ class PersonController extends Controller
         $content = view('person.view', compact('person'));
         return view('main', compact('content'));
     }
+
+    function detail($id)
+    {
+        $person = $this->repo->getSinglePerson($id);
+        $content = view('person.detail', compact('person'));
+        return view('main', compact('content'));
+    }
 }

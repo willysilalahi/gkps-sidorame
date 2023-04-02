@@ -8,4 +8,9 @@ class PersonRepository
     {
         return "Haleluya";
     }
+
+    function getSinglePerson($id)
+    {
+        return "Amen";
+    }
 }

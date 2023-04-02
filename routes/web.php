@@ -74,6 +74,7 @@ Route::group(['middleware' => ['auth', 'authorization']], function () {
 
     Route::prefix('/person')->group(function () {
         Route::get('/', [PersonController::class, 'view'])->name('person_view');
+        Route::get('/{id}', [PersonController::class, 'detail'])->name('person_view_detail');
     });
 
     Route::prefix('/activity')->group(function () {

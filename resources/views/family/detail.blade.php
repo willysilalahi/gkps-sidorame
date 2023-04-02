@@ -140,7 +140,7 @@
                                  </div>
                              </div>
                              <div>
-                                 <button type="reset" class="btn btn-secondary">Back</button>
+                                 <a href="{{ route('family_view') }}" class="btn btn-secondary">Back</a>
                              </div>
                          </form><!-- Vertical Form -->
 

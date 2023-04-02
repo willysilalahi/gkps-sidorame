@@ -19,4 +19,11 @@ class ActivityController extends Controller
         $content = view('activity.view', compact('activity'));
         return view('main', compact('content'));
     }
+
+    function detail($id)
+    {
+        $family = $this->repo->getSingleFamily($id);
+        $content = view('family.detail', compact('family'));
+        return view('main', compact('content'));
+    }
 }

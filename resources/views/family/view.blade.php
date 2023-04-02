@@ -14,107 +14,103 @@
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
-
                 <div class="card">
+                    <div class="card-header">
+                        <a href="" class="btn btn-primary float-right">Tambah</a>
+                    </div>
                     <div class="card-body">
                         <table class="table datatable">
                             <thead>
                                 <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Kode Keluarga</th>
-                                    <th scope="col">Sektor</th>
-                                    <th scope="col">Jlh Anggota</th>
+                                    <th scope="col" class="text-center">Sektor</th>
+                                    <th scope="col" class="text-center">Jlh Anggota</th>
                                     <th scope="col">Jenis Tangga</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>S01-001</td>
-                                    <td>1</td>
-                                    <td>4</td>
-                                    <td>Tangga Baggal</td>
+                                    <th scope="row"><small>1</small></th>
+                                    <td><small>S01-001</small></td>
+                                    <td class="text-center"><small>1</small></td>
+                                    <td class="text-center"><small>4</small></td>
+                                    <td><small>Tangga Baggal</small></td>
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-secondary"><i
-                                                class="bi bi-pencil"></i></a>
+                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
                                         <button class="btn btn-sm btn-danger" type="button"><i
                                                 class="bi bi-trash3"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">2</th>
-                                    <td>S01-002</td>
-                                    <td>1</td>
-                                    <td>6</td>
-                                    <td>Tangga Baggal</td>
+                                    <th scope="row"><small>2</small></th>
+                                    <td><small>S01-002</small></td>
+                                    <td class="text-center"><small>1</small></td>
+                                    <td class="text-center"><small>6</small></td>
+                                    <td><small>Tangga Baggal</small></td>
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-secondary"><i
-                                                class="bi bi-pencil"></i></a>
+                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
                                         <button class="btn btn-sm btn-danger" type="button"><i
                                                 class="bi bi-trash3"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">3</th>
-                                    <td>S02-001</td>
-                                    <td>2</td>
-                                    <td>4</td>
-                                    <td>Tangga Baggal</td>
+                                    <th scope="row"><small>3</small></th>
+                                    <td><small>S02-001</small></td>
+                                    <td class="text-center"><small>2</small></td>
+                                    <td class="text-center"><small>4</small></td>
+                                    <td><small>Tangga Baggal</small></td>
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-secondary"><i
-                                                class="bi bi-pencil"></i></a>
+                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
                                         <button class="btn btn-sm btn-danger" type="button"><i
                                                 class="bi bi-trash3"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">4</th>
-                                    <td>S02-002</td>
-                                    <td>2</td>
-                                    <td>2</td>
-                                    <td>Tangga Etek</td>
+                                    <th scope="row"><small>4</small></th>
+                                    <td><small>S02-002</small></td>
+                                    <td class="text-center"><small>2</small></td>
+                                    <td class="text-center"><small>2</small></td>
+                                    <td><small>Tangga Etek</small></td>
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-secondary"><i
-                                                class="bi bi-pencil"></i></a>
+                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
                                         <button class="btn btn-sm btn-danger" type="button"><i
                                                 class="bi bi-trash3"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">5</th>
-                                    <td>S03-001</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>Tangga Baggal</td>
+                                    <th scope="row"><small>5</small></th>
+                                    <td><small>S03-001</small></td>
+                                    <td class="text-center"><small>3</small></td>
+                                    <td class="text-center"><small>4</small></td>
+                                    <td><small>Tangga Baggal</small></td>
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-secondary"><i
-                                                class="bi bi-pencil"></i></a>
+                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
                                         <button class="btn btn-sm btn-danger" type="button"><i
                                                 class="bi bi-trash3"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">6</th>
-                                    <td>S03-002</td>
-                                    <td>3</td>
-                                    <td>6</td>
-                                    <td>Tangga Etek</td>
+                                    <th scope="row"><small>6</small></th>
+                                    <td><small>S03-002</small></td>
+                                    <td class="text-center"><small>3</small></td>
+                                    <td class="text-center"><small>6</small></td>
+                                    <td><small>Tangga Etek</small></td>
                                     <td>
                                         <a href="{{ route('family_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
                                                 class="bi bi-eye text-white"></i></a>
-                                        <a href="#" class="btn btn-sm btn-secondary"><i
-                                                class="bi bi-pencil"></i></a>
+                                        <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
                                         <button class="btn btn-sm btn-danger" type="button"><i
                                                 class="bi bi-trash3"></i></button>
                                     </td>
@@ -125,7 +121,6 @@
 
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

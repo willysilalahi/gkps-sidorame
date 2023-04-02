@@ -8,4 +8,9 @@ class FamilyRepository
     {
         return "Amen";
     }
+
+    function getSingleFamily($id)
+    {
+        return "Single";
+    }
 }

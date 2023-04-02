@@ -69,6 +69,7 @@ Route::group(['middleware' => ['auth', 'authorization']], function () {
 
     Route::prefix('/family')->group(function () {
         Route::get('/', [FamilyController::class, 'view'])->name('family_view');
+        Route::get('/{id}', [FamilyController::class, 'detail'])->name('family_view_detail');
     });
 
     Route::prefix('/person')->group(function () {

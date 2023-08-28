@@ -2,15 +2,19 @@
 
 namespace App\Repository;
 
+use App\Models\PersonModel;
+
 class PersonRepository
 {
     function getPerson()
     {
-        return "Haleluya";
+        $data = PersonModel::with(['family.sector'])->orderBy('name', 'asc')->get();
+        return $data;
     }
 
     function getSinglePerson($id)
     {
-        return "Amen";
+        $data = PersonModel::with(['family.sector'])->find($id);
+        return $data;
     }
 }

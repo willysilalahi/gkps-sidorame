@@ -1,5 +1,4 @@
  <main id="main" class="main">
-
      <div class="pagetitle">
          <h1>Keluarga</h1>
          <nav>
@@ -21,15 +20,15 @@
                          <form class="row g-3">
                              <div class="col-12">
                                  <label><small><strong>Kode Keluarga</strong></small></label>
-                                 <p>S01-002</p>
+                                 <p>{{ $family->code }}</p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Sektor</strong></small></label>
-                                 <p>Sektor 1</p>
+                                 <p>{{ $family->sector->name }}</p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Jenis Tangga</strong></small></label>
-                                 <p>Tangga Baggal</p>
+                                 <p>{{ $family->type == 1 ? 'Tangga Banggal' : 'Tangga Etek' }}</p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Anggota Keluarga</strong></small></label>
@@ -53,86 +52,51 @@
                                                  </tr>
                                              </thead>
                                              <tbody>
-                                                 <tr>
-                                                     <th scope="row" class="text-center"><small>1</small></th>
-                                                     <td><small>Henry Dunansyah Saragih</small></td>
-                                                     <td><small>Bapa</small></td>
-                                                     <td><small>Laki-laki</small></td>
-                                                     <td><small>Tebing Tinggi, 30 Jun 1973</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (26
-                                                             Des 1973)</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (26
-                                                             Des
-                                                             1990)</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (27
-                                                             Des
-                                                             2002)</small></td>
-                                                 </tr>
-                                                 <tr>
-                                                     <th scope="row" class="text-center"><small>2</small></th>
-                                                     <td><small>Tora Andriany Simamora</small></td>
-                                                     <td><small>Inang</small></td>
-                                                     <td><small>Perempuan</small></td>
-                                                     <td><small>Medan, 20 Des 1976</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (24
-                                                             Apr 1977)</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (10
-                                                             Mei
-                                                             1992)</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (27
-                                                             Des
-                                                             2002)</small></td>
-                                                 </tr>
-                                                 <tr>
-                                                     <th scope="row" class="text-center"><small>3</small></th>
-                                                     <td><small>Hennock Gitasari D Saragih</small></td>
-                                                     <td><small>Namaposo</small></td>
-                                                     <td><small>Perempuan</small></td>
-                                                     <td><small>Medan, 09 Des 2003</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (06
-                                                             Jun 2004)</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (25
-                                                             Des
-                                                             2022)</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-clock-fill text-secondary"></i></small>
-                                                     </td>
-                                                 </tr>
-                                                 <tr>
-                                                     <th scope="row" class="text-center"><small>4</small></th>
-                                                     <td><small>Gabriel Nicholas D Saragih</small></td>
-                                                     <td><small>Namaposo</small></td>
-                                                     <td><small>Laki-laki</small></td>
-                                                     <td><small>Medan, 30 Apr 2005</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (25
-                                                             Des 2005)</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i><br>
-                                                             (25
-                                                             Des
-                                                             2022)</small></td>
-                                                     <td class="text-center"><small><i
-                                                                 class="bi bi-clock-fill text-secondary"></i></small>
-                                                     </td>
-                                                 </tr>
+                                                 @foreach ($family->persons as $i)
+                                                     <tr>
+                                                         <th scope="row" class="text-center">
+                                                             <small>{{ $loop->iteration }}</small>
+                                                         </th>
+                                                         <td><small>{{ $i->name }}</small></td>
+                                                         <td><small>{{ $i->categorial_text }}</small></td>
+                                                         <td><small>{{ $i->gender_text }}</small></td>
+                                                         <td><small>{{ $i->place_of_birth }},
+                                                                 {{ date('d F Y', strtotime($i->date_of_birth)) }}</small>
+                                                         </td>
+                                                         <td class="text-center">
+                                                             <small>
+                                                                 @if ($i->baptis)
+                                                                     <i
+                                                                         class="bi bi-check-circle-fill text-success"></i>
+                                                                     {{ $i->date_of_baptis != null ? date('(d F Y)', strtotime($i->date_of_baptis)) : '' }}
+                                                                 @else
+                                                                     <i class="bi bi-clock-fill text-secondary"></i>
+                                                                 @endif
+                                                                 <br>
+                                                             </small>
+                                                         </td>
+                                                         <td class="text-center">
+                                                             <small>
+                                                                 @if ($i->sidi)
+                                                                     <i
+                                                                         class="bi bi-check-circle-fill text-success"></i>
+                                                                     {{ $i->date_of_sidi != null ? date('(d F Y)', strtotime($i->date_of_sidi)) : '' }}
+                                                                 @else
+                                                                     <i class="bi bi-clock-fill text-secondary"></i>
+                                                                 @endif
+                                                                 <br>
+                                                             </small>
+                                                         </td>
+                                                         <td class="text-center">
+                                                             @if ($i->date_of_wedding != null)
+                                                                 <small><i
+                                                                         class="bi bi-check-circle-fill text-success"></i><br>
+                                                                     ({{ date('d F Y', strtotime($i->date_of_wedding)) }})
+                                                                 </small>
+                                                             @endif
+                                                         </td>
+                                                     </tr>
+                                                 @endforeach
                                              </tbody>
                                          </table>
                                          <!-- End small tables -->

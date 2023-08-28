@@ -26,6 +26,14 @@ class MenuSeeder extends Seeder
             ],
             [
                 'id' => 2,
+                'name' => 'Sektor',
+                'route' => 'sector',
+                'icon' => 'bi bi-pin-map-fill',
+                'is_child' => 0,
+                'parent_id' => null
+            ],
+            [
+                'id' => 3,
                 'name' => 'Keluarga',
                 'route' => 'family',
                 'icon' => 'bi bi-box2-fill',
@@ -33,7 +41,7 @@ class MenuSeeder extends Seeder
                 'parent_id' => null
             ],
             [
-                'id' => 3,
+                'id' => 4,
                 'name' => 'Jemaat',
                 'route' => 'person',
                 'icon' => 'bi bi-people-fill',
@@ -41,7 +49,7 @@ class MenuSeeder extends Seeder
                 'parent_id' => null
             ],
             [
-                'id' => 4,
+                'id' => 5,
                 'name' => 'Activity',
                 'route' => 'activity',
                 'icon' => 'bi bi-activity',
@@ -49,7 +57,7 @@ class MenuSeeder extends Seeder
                 'parent_id' => null
             ],
             [
-                'id' => 5,
+                'id' => 6,
                 'name' => 'Setting',
                 'route' => null,
                 'icon' => 'bi bi-gear',
@@ -57,28 +65,28 @@ class MenuSeeder extends Seeder
                 'parent_id' => null
             ],
             [
-                'id' => 6,
+                'id' => 7,
                 'name' => 'Authorization',
                 'route' => 'authorization',
                 'icon' => null,
                 'is_child' => 1,
-                'parent_id' => 5
+                'parent_id' => 6
             ],
             [
-                'id' => 7,
+                'id' => 8,
                 'name' => 'Role',
                 'route' => 'role',
                 'icon' => null,
                 'is_child' => 1,
-                'parent_id' => 5
+                'parent_id' => 6
             ],
             [
-                'id' => 8,
+                'id' => 9,
                 'name' => 'Admin',
                 'route' => 'admin',
                 'icon' => null,
                 'is_child' => 1,
-                'parent_id' => 5
+                'parent_id' => 6
             ],
         ]);
     }

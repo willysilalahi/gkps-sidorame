@@ -21,39 +21,73 @@
                          <form class="row g-3">
                              <div class="col-12">
                                  <label><small><strong>Kode Keluarga</strong></small></label>
-                                 <p><a href="{{ route('family_view_detail', 1) }}">S01-002</a></p>
+                                 <p>
+                                     @if ($person->family != null)
+                                         <a href="{{ route('family_view_detail', $person->family->id) }}"
+                                             target="_blank">{{ $person->family->code }}</a>
+                                     @else
+                                         -
+                                     @endif
+                                 </p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Sektor</strong></small></label>
-                                 <p>Sektor 1</p>
+                                 <p>
+                                     @if ($person->family != null)
+                                         {{ $person->family->sector->name }}
+                                     @else
+                                         -
+                                     @endif
+                                 </p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Nama</strong></small></label>
-                                 <p>Henry Dunansyah Saragih</p>
+                                 <p>{{ $person->name }}</p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Seksi</strong></small></label>
-                                 <p>Seksi Bapa</p>
+                                 <p>{{ $person->categorial_text }}</p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Jenis Kelamin</strong></small></label>
-                                 <p>Laki-Laki</p>
+                                 <p>{{ $person->gender_text }}</p>
                              </div>
                              <div class="col-12 mt-0">
-                                 <label><small><strong>T. Tanggal Lahir</strong></small></label>
-                                 <p>Tebing Tinggi, 30 Jun 1973</p>
+                                 <label><small><strong>Tempat Tanggal Lahir</strong></small></label>
+                                 <p>{{ $person->birth_text }}</p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Status Baptis</strong></small></label>
-                                 <p>Sudah Baptis (26 Des 1973)</p>
+                                 <p>
+                                     @if ($person->baptis)
+                                         Sudah Baptis
+                                         {{ $person->date_of_baptis != null ? date('(d F Y)', strtotime($person->date_of_baptis)) : '' }}
+                                     @else
+                                         Belum Baptis
+                                     @endif
+                                 </p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Status Sidi</strong></small></label>
-                                 <p>Sudah Baptis (26 Des 1990)</p>
+                                 <p>
+                                     @if ($person->sidi)
+                                         Sudah Sidi
+                                         {{ $person->date_of_sidi != null ? date('(d F Y)', strtotime($person->date_of_sidi)) : '' }}
+                                     @else
+                                         Belum Sidi
+                                     @endif
+                                 </p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Status Menikah</strong></small></label>
-                                 <p>Sudah Baptis (27 Des 2002)</p>
+                                 <p>
+                                     @if ($person->date_of_wedding != null)
+                                         Sudah Menikah
+                                         ({{ date('d F Y', strtotime($person->date_of_wedding)) }})
+                                     @else
+                                         -
+                                     @endif
+                                 </p>
                              </div>
                              <div>
                                  <a href="{{ route('person_view') }}" class="btn btn-secondary">Back</a>

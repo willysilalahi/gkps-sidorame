@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SectorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,14 +68,27 @@ Route::group(['middleware' => ['auth', 'authorization']], function () {
         Route::delete('/destroy/{id}', [AdminController::class, 'destroy'])->name('admin_delete');
     });
 
+    Route::prefix('/sector')->group(function () {
+        Route::get('/', [SectorController::class, 'view'])->name('sector_view');
+        Route::get('/{id}', [SectorController::class, 'detail'])->name('sector_view_detail');
+    });
+
     Route::prefix('/family')->group(function () {
         Route::get('/', [FamilyController::class, 'view'])->name('family_view');
+        Route::get('/add', [FamilyController::class, 'addView'])->name('family_add');
         Route::get('/{id}', [FamilyController::class, 'detail'])->name('family_view_detail');
+        Route::get('/{id}/edit', [FamilyController::class, 'editView'])->name('family_edit');
+        Route::post('/', [FamilyController::class, 'create'])->name('family_add_post');
+        Route::patch('/{id}', [FamilyController::class, 'update'])->name('family_edit_patch');
     });
 
     Route::prefix('/person')->group(function () {
         Route::get('/', [PersonController::class, 'view'])->name('person_view');
+        Route::get('/add', [PersonController::class, 'addView'])->name('person_add');
         Route::get('/{id}', [PersonController::class, 'detail'])->name('person_view_detail');
+        Route::get('/{id}/edit', [PersonController::class, 'editView'])->name('person_edit');
+        Route::post('/', [PersonController::class, 'create'])->name('person_add_post');
+        Route::patch('/{id}', [PersonController::class, 'update'])->name('person_edit_patch');
     });
 
     Route::prefix('/activity')->group(function () {

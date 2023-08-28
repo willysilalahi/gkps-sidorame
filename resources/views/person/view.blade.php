@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header">
                         @add_access
-                            <a href="" class="btn btn-primary float-right">Tambah</a>
+                            <a href="{{ route('person_add') }}" class="btn btn-primary float-right">Tambah</a>
                         @endadd_access
                     </div>
                     <div class="card-body">
@@ -35,139 +35,41 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row" class="text-center"><small>1</small></th>
-                                    <td><small>Sean Felix Girsang</small></td>
-                                    <td><small>Namaposo</small></td>
-                                    <td><small>Laki-laki</small></td>
-                                    <td><small>Medan, 10 Oct 2006</small></td>
-                                    <td class="text-center"><small>3</small></td>
-                                    <td class="text-center"><a
-                                            href="{{ route('family_view_detail', 1) }}"><small>S03-041</small></a>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('person_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
-                                                class="bi bi-eye text-white"></i></a>
-                                        @edit_access
-                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        @endedit_access
-                                        @delete_access
-                                            <button class="btn btn-sm btn-danger" type="button"><i
-                                                    class="bi bi-trash3"></i></button>
-                                        @enddelete_access
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-center"><small>2</small></th>
-                                    <td><small>Septian Gultom</small></td>
-                                    <td><small>Namaposo</small></td>
-                                    <td><small>Laki-laki</small></td>
-                                    <td><small>Medan, 30 Jun 2003</small></td>
-                                    <td class="text-center"><small>2</small></td>
-                                    <td class="text-center"><a
-                                            href="{{ route('family_view_detail', 1) }}"><small>S02-074</small></a>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('person_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
-                                                class="bi bi-eye text-white"></i></a>
-                                        @edit_access
-                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        @endedit_access
-                                        @delete_access
-                                            <button class="btn btn-sm btn-danger" type="button"><i
-                                                    class="bi bi-trash3"></i></button>
-                                        @enddelete_access
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-center"><small>3</small></th>
-                                    <td><small>Henry Dunansyah Saragih</small></td>
-                                    <td><small>Bapa</small></td>
-                                    <td><small>Laki-laki</small></td>
-                                    <td><small>Tebing Tinggi, 30 Jun 1973</small></td>
-                                    <td class="text-center"><small>1</small></td>
-                                    <td class="text-center"><a
-                                            href="{{ route('family_view_detail', 1) }}"><small>S01-002</small></a>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('person_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
-                                                class="bi bi-eye text-white"></i></a>
-                                        @edit_access
-                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        @endedit_access
-                                        @delete_access
-                                            <button class="btn btn-sm btn-danger" type="button"><i
-                                                    class="bi bi-trash3"></i></button>
-                                        @enddelete_access
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-center"><small>4</small></th>
-                                    <td><small>Tora Andriany Simamora</small></td>
-                                    <td><small>Inang</small></td>
-                                    <td><small>Perempuan</small></td>
-                                    <td><small>Medan, 20 Des 1976</small></td>
-                                    <td class="text-center"><small>1</small></td>
-                                    <td class="text-center"><a
-                                            href="{{ route('family_view_detail', 1) }}"><small>S01-002</small></a>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('person_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
-                                                class="bi bi-eye text-white"></i></a>
-                                        @edit_access
-                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        @endedit_access
-                                        @delete_access
-                                            <button class="btn btn-sm btn-danger" type="button"><i
-                                                    class="bi bi-trash3"></i></button>
-                                        @enddelete_access
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-center"><small>5</small></th>
-                                    <td><small>Hennock Gitasari D Saragih</small></td>
-                                    <td><small>Namaposo</small></td>
-                                    <td><small>Perempuan</small></td>
-                                    <td><small>Medan, 09 Des 2003</small></td>
-                                    <td class="text-center"><small>1</small></td>
-                                    <td class="text-center"><a
-                                            href="{{ route('family_view_detail', 1) }}"><small>S01-002</small></a>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('person_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
-                                                class="bi bi-eye text-white"></i></a>
-                                        @edit_access
-                                            <a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil"></i></a>
-                                        @endedit_access
-                                        @delete_access
-                                            <button class="btn btn-sm btn-danger" type="button"><i
-                                                    class="bi bi-trash3"></i></button>
-                                        @enddelete_access
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-center"><small>6</small></th>
-                                    <td><small>Gabriel Nicholas D Saragih</small></td>
-                                    <td><small>Namaposo</small></td>
-                                    <td><small>Laki-laki</small></td>
-                                    <td><small>Medan, 30 Apr 2005</small></td>
-                                    <td class="text-center"><small>1</small></td>
-                                    <td class="text-center"><a
-                                            href="{{ route('family_view_detail', 1) }}"><small>S01-002</small></a>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('person_view_detail', 1) }}" class="btn btn-sm btn-dark"><i
-                                                class="bi bi-eye text-white"></i></a>
-                                        @edit_access
-                                            <a href="#" class="btn btn-sm btn-dark"><i
+                                @foreach ($persons as $i)
+                                    <tr>
+                                        <th scope="row" class="text-center"><small>{{ $loop->iteration }}</small>
+                                        </th>
+                                        <td><small>{{ $i->name }}</small></td>
+                                        <td><small>{{ $i->categorial_text }}</small></td>
+                                        <td><small>{{ $i->gender_text }}</small></td>
+                                        <td><small>{{ $i->birth_text }}</small></td>
+                                        <td class="text-center">
+                                            <small>
+                                                @if ($i->family != null)
+                                                    {{ $i->family->sector->name }}
+                                                @else
+                                                    -
+                                                @endif
+                                            </small>
+                                        </td>
+                                        <td class="text-center">
+                                            @if ($i->family != null)
+                                                <a href="{{ route('family_view_detail', $i->family->id) }}"
+                                                    target="_blank"><small>{{ $i->family->code }}</small></a>
+                                            @else
+                                                -
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('person_view_detail', $i->id) }}"
+                                                class="btn btn-sm btn-dark"><i class="bi bi-eye text-white"></i></a>
+                                            <a href="{{ route('person_edit', $i->id) }}" class="btn btn-sm btn-dark"><i
                                                     class="bi bi-pencil"></i></a>
-                                        @endedit_access
-                                        @delete_access
                                             <button class="btn btn-sm btn-danger" type="button"><i
                                                     class="bi bi-trash3"></i></button>
-                                        @enddelete_access
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->

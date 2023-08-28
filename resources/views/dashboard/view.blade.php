@@ -26,7 +26,7 @@
                                         <i class="bi bi-pin-map"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>3</h6>
+                                        <h6>{{ $sum_sector }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                         <i class="bi bi-box2-fill"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>236</h6>
+                                        <h6>{{ $sum_family }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                         <i class="bi bi-people-fill"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>564</h6>
+                                        <h6>{{ $sum_person }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -79,87 +79,92 @@
             <!-- Left side columns -->
             <div class="col-lg-12">
                 <div class="row">
-                    <!-- Sales Card -->
-                    <div class="col-xxl-4 col-md-3">
-                        <div class="card info-card revenue-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Seksi Bapa</h5>
+                    @foreach ($persons as $i)
+                        @if ($i->categorial == 1)
+                            <div class="col-xxl-4 col-md-3">
+                                <div class="card info-card revenue-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Seksi Bapa</h5>
 
-                                <div class="d-flex align-items-center">
-                                    <div
-                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-person-fill"></i>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-person-fill"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{{ $i->total }}</h6>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>103</h6>
-                                    </div>
+
                                 </div>
                             </div>
+                        @endif
 
-                        </div>
-                    </div><!-- End Sales Card -->
+                        @if ($i->categorial == 2)
+                            <div class="col-xxl-4 col-md-3">
+                                <div class="card info-card sales-card">
 
-                    <!-- Revenue Card -->
-                    <div class="col-xxl-4 col-md-3">
-                        <div class="card info-card sales-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Seksi Inang</h5>
 
-                            <div class="card-body">
-                                <h5 class="card-title">Seksi Inang</h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div
-                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-person-fill"></i>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-person-fill"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{{ $i->total }}</h6>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>126</h6>
-                                    </div>
+
                                 </div>
                             </div>
+                        @endif
 
-                        </div>
-                    </div><!-- End Revenue Card -->
+                        @if ($i->categorial == 3)
+                            <div class="col-xxl-4 col-md-3">
+                                <div class="card info-card customers-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Seksi Namaposo</h5>
 
-                    <!-- Revenue Card -->
-                    <div class="col-xxl-4 col-md-3">
-                        <div class="card info-card customers-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Seksi Namaposo</h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div
-                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-person-fill"></i>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-person-fill"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{{ $i->total }}</h6>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>71</h6>
-                                    </div>
+
                                 </div>
                             </div>
+                        @endif
 
-                        </div>
-                    </div><!-- End Revenue Card -->
+                        @if ($i->categorial == 4)
+                            <div class="col-xxl-4 col-md-3">
+                                <div class="card info-card person-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Seksi S.Minggu</h5>
 
-                    <!-- Revenue Card -->
-                    <div class="col-xxl-4 col-md-3">
-                        <div class="card info-card person-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Seksi S.Minggu</h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div
-                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-person-fill"></i>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-person-fill"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{{ $i->total }}</h6>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>46</h6>
-                                    </div>
+
                                 </div>
                             </div>
-
-                        </div>
-                    </div><!-- End Revenue Card -->
-
+                        @endif
+                    @endforeach
                 </div>
             </div><!-- End Left side columns -->
 
@@ -172,8 +177,9 @@
                     <div class="col-12">
                         <div class="card top-selling overflow-auto">
                             <div class="card-body pb-0">
-                                <h5 class="card-title">Ulang Tahun Dalam Minggu Ini <i class="bi bi-balloon"></i></h5>
-
+                                <h5 class="card-title">Ulang Tahun Dalam Minggu Ini
+                                    {{ '(' . $start_birthday . ' - ' . $end_birthday . ')' }} <i
+                                        class="bi bi-balloon"></i></h5>
                                 <table class="table table-borderless">
                                     <thead>
                                         <tr>
@@ -185,27 +191,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row"><a href="#">Septian Gultom</a></th>
-                                            <td>Namaposo</td>
-                                            <td>2</td>
-                                            <td>22 April 2023</td>
-                                            <td class="fw-bold">21 Tahun</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#">St. Henry D. Saragih</a></th>
-                                            <td>Bapa</td>
-                                            <td>1</td>
-                                            <td>24 April 2023</td>
-                                            <td class="fw-bold">49 Tahun</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#">Kevin Joshua Nocerino Saragih</a></th>
-                                            <td>S. Minggu</td>
-                                            <td>2</td>
-                                            <td>24 April 2023</td>
-                                            <td class="fw-bold">16 Tahun</td>
-                                        </tr>
+                                        @foreach ($birthday as $i)
+                                            @php
+                                                $tanggalLahir = new DateTime($i->date_of_birth);
+                                                $today = new DateTime();
+                                                $umur = $today->diff($tanggalLahir)->y;
+                                            @endphp
+                                            <tr>
+                                                <th scope="row"><a href="{{ route('person_view_detail', $i->id) }}"
+                                                        target="_blank">{{ $i->name }}</a></th>
+                                                <td>{{ $i->categorial_text }}</td>
+                                                <td>{{ $i->family != null ? $i->family->sector->name : '-' }}</td>
+                                                <td>{{ date('d F Y', strtotime($i->date_of_birth)) }}</td>
+                                                <td class="fw-bold">{{ $umur + 1 }} Tahun</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
 

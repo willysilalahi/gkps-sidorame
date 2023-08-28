@@ -16,38 +16,29 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('family_add') }}" class="btn btn-primary float-right">Tambah</a>
                     </div>
                     <div class="card-body">
                         <table class="table datatable">
                             <thead>
                                 <tr>
                                     <th scope="col">No</th>
-                                    <th scope="col">Kode Keluarga</th>
-                                    <th scope="col">Anggota I</th>
-                                    <th scope="col" class="text-center">Sektor</th>
-                                    <th scope="col" class="text-center">Jlh Anggota</th>
-                                    <th scope="col">Jenis Tangga</th>
+                                    <th scope="col">Nama Sektor</th>
+                                    <th scope="col" class="text-center">Jlh Keluarga</th>
+                                    <th scope="col" class="text-center">Jlh Jemaat</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($family as $i)
+                                @foreach ($sector as $i)
                                     <tr>
                                         <th scope="row"><small>{{ $loop->iteration }}</small></th>
-                                        <td><small>{{ $i->code }}</small></td>
-                                        <td><small>{{ count($i->persons) > 0 ? $i->persons[0]->name : '-' }}</small>
+                                        <td><small>{{ $i->name }}</small></td>
+                                        <td class="text-center"><small>{{ count($i->family) . ' Keluarga' }}</small>
                                         </td>
-                                        <td class="text-center"><small>{{ $i->sectors_id }}</small></td>
-                                        <td class="text-center"><small>{{ count($i->persons) }}</small></td>
-                                        <td><small>{{ $i->type == 1 ? 'Tangga Banggal' : 'Tangga Etek' }}</small></td>
+                                        <td class="text-center"><small>{{ $i->total_person . ' Orang' }}</small></td>
                                         <td>
-                                            <a href="{{ route('family_view_detail', $i->id) }}"
+                                            <a href="{{ route('sector_view_detail', $i->id) }}"
                                                 class="btn btn-sm btn-dark"><i class="bi bi-eye text-white"></i></a>
-                                            <a href="{{ route('family_edit', $i->id) }}" class="btn btn-sm btn-dark"><i
-                                                    class="bi bi-pencil"></i></a>
-                                            <button class="btn btn-sm btn-danger" type="button"><i
-                                                    class="bi bi-trash3"></i></button>
                                         </td>
                                     </tr>
                                 @endforeach

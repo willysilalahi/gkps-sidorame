@@ -24,4 +24,13 @@ class FamilyModel extends Model
     {
         return $this->hasMany(PersonModel::class, 'family_id', 'id');
     }
+
+    public function getSectorNameAttribute()
+    {
+        $name = '-';
+        if ($this->sector != null) {
+            $name = $this->sector->name;
+        }
+        return $name;
+    }
 }

@@ -31,6 +31,10 @@ Route::get('/', function () {
 Route::get('/login', [AuthController::class, 'viewlogin'])->name('login');
 Route::post('/login', [AuthController::class, 'proccesslogin']);
 Route::get('/logout', [AuthController::class, 'proccesslogout']);
+Route::get('/export-person', [AuthController::class, 'exportPerson']);
+Route::get('/export-family', [AuthController::class, 'exportFamily']);
+Route::get('/export-dashboard', [AuthController::class, 'exportDashboard']);
+Route::get('/export-per-sector/{id}', [AuthController::class, 'exportPerSector']);
 
 
 Route::group(['middleware' => ['auth', 'authorization']], function () {

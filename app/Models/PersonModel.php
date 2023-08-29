@@ -69,4 +69,40 @@ class PersonModel extends Model
                 return 'Perempuan';
         }
     }
+
+    public function getSectorNameAttribute()
+    {
+        $name = '-';
+        if ($this->family != null) {
+            $name = $this->family->sector->name;
+        }
+        return $name;
+    }
+
+    public function getBaptisDateFormatAttribute()
+    {
+        $format = '-';
+        if ($this->baptis == 1 && $this->date_of_baptis != null) {
+            $format = date('d F Y', strtotime($this->date_of_baptis));
+        }
+        return $format;
+    }
+
+    public function getSidiDateFormatAttribute()
+    {
+        $format = '-';
+        if ($this->sidi == 1 && $this->date_of_sidi != null) {
+            $format = date('d F Y', strtotime($this->date_of_sidi));
+        }
+        return $format;
+    }
+
+    public function getWeddingDateFormatAttribute()
+    {
+        $format = '-';
+        if ($this->date_of_wedding != null) {
+            $format = date('d F Y', strtotime($this->date_of_wedding));
+        }
+        return $format;
+    }
 }

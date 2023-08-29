@@ -1,4 +1,93 @@
 <table>
+    <tr>
+        <td colspan="3"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2" style="font-weight: 900;margin:auto">Rekapitulasi Jumlah Kuria {{ $sector->name }}</td>
+    </tr>
+    <tr>
+        <td colspan="3"></td>
+    </tr>
+    @foreach ($gender as $i)
+        @if ($i->gender == 1)
+            <tr>
+                <td></td>
+                <td style="font-weight: 900;margin:auto">Laki-Laki</td>
+                <td>{{ $i->total }}</td>
+            </tr>
+        @endif
+        @if ($i->gender == 0)
+            <tr>
+                <td></td>
+                <td style="font-weight: 900;margin:auto">Perempuan</td>
+                <td>{{ $i->total }}</td>
+            </tr>
+        @endif
+    @endforeach
+    <tr>
+        <td></td>
+        <td style="font-weight: 900;margin:auto">Jumlah Jiwa</td>
+        <td>{{ $jiwa }}</td>
+    </tr>
+    @foreach ($tangga as $i)
+        @if ($i->type == 1)
+            <tr>
+                <td></td>
+                <td style="font-weight: 900;margin:auto">Tangga Banggal</td>
+                <td>{{ $i->total }}</td>
+            </tr>
+        @endif
+        @if ($i->type == 0)
+            <tr>
+                <td></td>
+                <td style="font-weight: 900;margin:auto">Tangga Etek</td>
+                <td>{{ $i->total }}</td>
+            </tr>
+        @endif
+    @endforeach
+    <tr>
+        <td></td>
+        <td style="font-weight: 900;margin:auto">Jumlah Keluarga</td>
+        <td>{{ $keluarga }}</td>
+    </tr>
+    @foreach ($seksi as $i)
+        @if ($i->categorial == 1)
+            <tr>
+                <td></td>
+                <td style="font-weight: 900;margin:auto">Seksi Bapa</td>
+                <td>{{ $i->total }}</td>
+            </tr>
+        @endif
+        @if ($i->categorial == 2)
+            <tr>
+                <td></td>
+                <td style="font-weight: 900;margin:auto">Seksi Inang</td>
+                <td>{{ $i->total }}</td>
+            </tr>
+        @endif
+        @if ($i->categorial == 3)
+            <tr>
+                <td></td>
+                <td style="font-weight: 900;margin:auto">Seksi Namaposo</td>
+                <td>{{ $i->total }}</td>
+            </tr>
+        @endif
+        @if ($i->categorial == 4)
+            <tr>
+                <td></td>
+                <td style="font-weight: 900;margin:auto">Seksi Sekolah Minggu</td>
+                <td>{{ $i->total }}</td>
+            </tr>
+        @endif
+    @endforeach
+    <tr>
+        <td colspan="3"></td>
+    </tr>
+    <tr>
+        <td colspan="3"></td>
+    </tr>
+
     @foreach ($family as $fam)
         <tr>
             <th></th>
@@ -29,8 +118,8 @@
                 <td>{{ $i->gender_text }}</td>
                 <td>{{ $i->birth_text }}</td>
                 <td>{{ $i->categorial_text }}</td>
-                <td>{{ $i->baptis == 1 ? 'Sudah Baptis' : 'Belum Baptis' }}</td>
-                <td>{{ $i->sidi == 1 ? 'Sudah Sidi' : 'Belum Sidi' }}</td>
+                <td>{{ $i->status_baptis }}</td>
+                <td>{{ $i->status_sidi }}</td>
                 <td>{{ $i->baptis_date_format }}</td>
                 <td>{{ $i->sidi_date_format }}</td>
                 <td>{{ $i->wedding_date_format }}</td>

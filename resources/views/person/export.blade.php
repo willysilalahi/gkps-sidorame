@@ -20,8 +20,8 @@
             <td>{{ $i->gender_text }}</td>
             <td>{{ $i->birth_text }}</td>
             <td>{{ $i->categorial_text }}</td>
-            <td>{{ $i->baptis == 1 ? 'Sudah Baptis' : 'Belum Baptis' }}</td>
-            <td>{{ $i->sidi == 1 ? 'Sudah Sidi' : 'Belum Sidi' }}</td>
+            <td>{{ $i->status_baptis }}</td>
+            <td>{{ $i->status_sidi }}</td>
             <td>{{ $i->baptis_date_format }}</td>
             <td>{{ $i->sidi_date_format }}</td>
             <td>{{ $i->wedding_date_format }}</td>

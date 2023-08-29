@@ -105,4 +105,30 @@ class PersonModel extends Model
         }
         return $format;
     }
+
+    public function getStatusBaptisAttribute()
+    {
+        $status = '-';
+        if ($this->baptis != null) {
+            if ($this->baptis == 1) {
+                $status = 'Sudah Baptis';
+            } else {
+                $status = 'Belum Baptis';
+            }
+        }
+        return $status;
+    }
+
+    public function getStatusSidiAttribute()
+    {
+        $status = '-';
+        if ($this->sidi != null) {
+            if ($this->sidi == 1) {
+                $status = 'Sudah Sidi';
+            } else {
+                $status = 'Belum Sidi';
+            }
+        }
+        return $status;
+    }
 }

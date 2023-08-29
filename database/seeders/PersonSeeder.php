@@ -24,11 +24,11 @@ class PersonSeeder extends Seeder
                 'place_of_birth' => 'Marelan',
                 'date_of_birth' => '1998-02-12',
                 'categorial' => 1,
-                'baptis' => 1,
-                'sidi' => 1,
-                'date_of_baptis' => '1998-12-25',
-                'date_of_sidi' => '2005-12-25',
-                'date_of_wedding' => '2008-11-21'
+                'baptis' => null,
+                'sidi' => null,
+                'date_of_baptis' => null,
+                'date_of_sidi' => null,
+                'date_of_wedding' => null
             ],
             [
                 'family_id' => 1,

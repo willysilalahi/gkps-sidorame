@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $this->call([
-            MenuSeeder::class,
-            RoleSeeder::class,
-            AdminSeeder::class,
-            AuthorizationTypeSeeder::class,
-            AuthorizationSeeder::class,
+            // MenuSeeder::class,
+            // RoleSeeder::class,
+            // AdminSeeder::class,
+            // AuthorizationTypeSeeder::class,
+            // AuthorizationSeeder::class,
             SectorSeeder::class,
             FamilySeeder::class,
             PersonSeeder::class,

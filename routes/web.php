@@ -31,15 +31,12 @@ Route::get('/', function () {
 Route::get('/login', [AuthController::class, 'viewlogin'])->name('login');
 Route::post('/login', [AuthController::class, 'proccesslogin']);
 Route::get('/logout', [AuthController::class, 'proccesslogout']);
-Route::get('/export-person', [AuthController::class, 'exportPerson']);
-Route::get('/export-family', [AuthController::class, 'exportFamily']);
-Route::get('/export-dashboard', [AuthController::class, 'exportDashboard']);
-Route::get('/export-per-sector/{id}', [AuthController::class, 'exportPerSector']);
 
 
 Route::group(['middleware' => ['auth', 'authorization']], function () {
     Route::prefix('/dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'view'])->name('dashboard_view');
+        Route::get('/export', [DashboardController::class, 'export'])->name('dashboard_view_export');
     });
 
     Route::prefix('/authorization')->group(function () {
@@ -74,12 +71,14 @@ Route::group(['middleware' => ['auth', 'authorization']], function () {
 
     Route::prefix('/sector')->group(function () {
         Route::get('/', [SectorController::class, 'view'])->name('sector_view');
+        Route::get('/export/{id}', [SectorController::class, 'export'])->name('sector_view_export');
         Route::get('/{id}', [SectorController::class, 'detail'])->name('sector_view_detail');
     });
 
     Route::prefix('/family')->group(function () {
         Route::get('/', [FamilyController::class, 'view'])->name('family_view');
         Route::get('/add', [FamilyController::class, 'addView'])->name('family_add');
+        Route::get('/export', [FamilyController::class, 'export'])->name('family_view_export');
         Route::get('/{id}', [FamilyController::class, 'detail'])->name('family_view_detail');
         Route::get('/{id}/edit', [FamilyController::class, 'editView'])->name('family_edit');
         Route::post('/', [FamilyController::class, 'create'])->name('family_add_post');
@@ -89,6 +88,7 @@ Route::group(['middleware' => ['auth', 'authorization']], function () {
     Route::prefix('/person')->group(function () {
         Route::get('/', [PersonController::class, 'view'])->name('person_view');
         Route::get('/add', [PersonController::class, 'addView'])->name('person_add');
+        Route::get('/export', [PersonController::class, 'export'])->name('person_view_export');
         Route::get('/{id}', [PersonController::class, 'detail'])->name('person_view_detail');
         Route::get('/{id}/edit', [PersonController::class, 'editView'])->name('person_edit');
         Route::post('/', [PersonController::class, 'create'])->name('person_add_post');

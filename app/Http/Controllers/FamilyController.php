@@ -6,7 +6,8 @@ use App\Http\Requests\FamilyRequest;
 use App\Models\FamilyModel;
 use App\Models\PersonModel;
 use App\Models\SectorModel;
-use App\Repository\FamilyRepository;
+use App\Exports\FamilyExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class FamilyController extends Controller
 {
@@ -23,6 +24,12 @@ class FamilyController extends Controller
         $family = FamilyModel::with(['sector', 'persons'])->find($id);
         $content = view('family.detail', compact('family'));
         return view('main', compact('content'));
+    }
+
+    function export()
+    {
+        $file_name = 'Export Data Keluarga.xlsx';
+        return Excel::download(new FamilyExport(1),  $file_name);
     }
 
     function addView()

@@ -65,24 +65,28 @@
                                                          </td>
                                                          <td class="text-center">
                                                              <small>
-                                                                 @if ($i->baptis)
-                                                                     <i
-                                                                         class="bi bi-check-circle-fill text-success"></i>
-                                                                     {{ $i->date_of_baptis != null ? date('(d F Y)', strtotime($i->date_of_baptis)) : '' }}
-                                                                 @else
-                                                                     <i class="bi bi-clock-fill text-secondary"></i>
+                                                                 @if ($i->baptis != null)
+                                                                     @if ($i->baptis == 1)
+                                                                         <i
+                                                                             class="bi bi-check-circle-fill text-success"></i>
+                                                                         {{ $i->date_of_baptis != null ? date('(d F Y)', strtotime($i->date_of_baptis)) : '' }}
+                                                                     @else($i->baptis == 0)
+                                                                         <i class="bi bi-clock-fill text-secondary"></i>
+                                                                     @endif
                                                                  @endif
                                                                  <br>
                                                              </small>
                                                          </td>
                                                          <td class="text-center">
                                                              <small>
-                                                                 @if ($i->sidi)
-                                                                     <i
-                                                                         class="bi bi-check-circle-fill text-success"></i>
-                                                                     {{ $i->date_of_sidi != null ? date('(d F Y)', strtotime($i->date_of_sidi)) : '' }}
-                                                                 @else
-                                                                     <i class="bi bi-clock-fill text-secondary"></i>
+                                                                 @if ($i->sidi != null)
+                                                                     @if ($i->sidi)
+                                                                         <i
+                                                                             class="bi bi-check-circle-fill text-success"></i>
+                                                                         {{ $i->date_of_sidi != null ? date('(d F Y)', strtotime($i->date_of_sidi)) : '' }}
+                                                                     @else
+                                                                         <i class="bi bi-clock-fill text-secondary"></i>
+                                                                     @endif
                                                                  @endif
                                                                  <br>
                                                              </small>

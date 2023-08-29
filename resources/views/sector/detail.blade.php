@@ -15,8 +15,7 @@
              <div class="col-lg-12">
                  <div class="card">
                      <div class="card-body">
-                         <h5 class="card-title">Semua Keluarga &emsp; <a href=""
-                                 class="btn btn-sm btn-dark">Export</a>
+                         <h5 class="card-title">Semua Keluarga &emsp;
                          </h5>
                          <!-- Vertical Form -->
                          <form class="row g-3">
@@ -59,21 +58,27 @@
                                                  </td>
                                                  <td>{{ $j->categorial_text }}</td>
                                                  <td>
-                                                     @if ($j->baptis == 1)
-                                                         <small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i></small>
-                                                         {{ $j->date_of_baptis != null ? date('d M Y', strtotime($j->date_of_baptis)) : '' }}
-                                                     @else
-                                                         <small><i class="bi bi-clock-fill text-secondary"></i></small>
+                                                     @if ($j->baptis != null)
+                                                         @if ($j->baptis == 1)
+                                                             <small><i
+                                                                     class="bi bi-check-circle-fill text-success"></i></small>
+                                                             {{ $j->date_of_baptis != null ? date('d M Y', strtotime($j->date_of_baptis)) : '' }}
+                                                         @else
+                                                             <small><i
+                                                                     class="bi bi-clock-fill text-secondary"></i></small>
+                                                         @endif
                                                      @endif
                                                  </td>
                                                  <td>
-                                                     @if ($j->sidi == 1)
-                                                         <small><i
-                                                                 class="bi bi-check-circle-fill text-success"></i></small>
-                                                         {{ $j->date_of_sidi != null ? date('d M Y', strtotime($j->date_of_sidi)) : '' }}
-                                                     @else
-                                                         <small><i class="bi bi-clock-fill text-secondary"></i></small>
+                                                     @if ($j->sidi != null)
+                                                         @if ($j->sidi == 1)
+                                                             <small><i
+                                                                     class="bi bi-check-circle-fill text-success"></i></small>
+                                                             {{ $j->date_of_sidi != null ? date('d M Y', strtotime($j->date_of_sidi)) : '' }}
+                                                         @else
+                                                             <small><i
+                                                                     class="bi bi-clock-fill text-secondary"></i></small>
+                                                         @endif
                                                      @endif
                                                  </td>
                                                  <td>{{ $j->date_of_wedding != null ? date('d M Y', strtotime($j->date_of_wedding)) : '' }}

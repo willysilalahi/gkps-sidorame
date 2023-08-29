@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PersonRequest;
 use App\Models\PersonModel;
 use App\Repository\PersonRepository;
-use Illuminate\Http\Request;
+use App\Exports\PersonExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PersonController extends Controller
 {
@@ -27,6 +28,12 @@ class PersonController extends Controller
         $person = $this->repo->getSinglePerson($id);
         $content = view('person.detail', compact('person'));
         return view('main', compact('content'));
+    }
+
+    function export()
+    {
+        $file_name = 'Export Data Jemaat.xlsx';
+        return Excel::download(new PersonExport(1),  $file_name);
     }
 
     function addView()

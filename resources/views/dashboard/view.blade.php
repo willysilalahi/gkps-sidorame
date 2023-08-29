@@ -1,5 +1,7 @@
 <main id="main" class="main">
     <div class="pagetitle">
+        <a href="{{ route('dashboard_view_export') }}" class="btn btn-sm btn-dark px-3 float-end"><i
+                class="bi bi-file-earmark-spreadsheet-fill"></i> Export</a>
         <h1>Dashboard</h1>
         <nav>
             <ol class="breadcrumb">

@@ -38,7 +38,11 @@
                                         <td class="text-center"><small>{{ $i->total_person . ' Orang' }}</small></td>
                                         <td>
                                             <a href="{{ route('sector_view_detail', $i->id) }}"
-                                                class="btn btn-sm btn-dark"><i class="bi bi-eye text-white"></i></a>
+                                                class="btn btn-sm btn-dark mx-2"><i
+                                                    class="bi bi-eye text-white"></i></a>
+                                            <a href="{{ route('sector_view_export', $i->id) }}"
+                                                class="btn btn-dark btn-sm float-right"><i
+                                                    class="bi bi-file-earmark-spreadsheet-fill"></i> Export</a>
                                         </td>
                                     </tr>
                                 @endforeach

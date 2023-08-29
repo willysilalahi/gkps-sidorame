@@ -16,7 +16,10 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('family_add') }}" class="btn btn-primary float-right">Tambah</a>
+                        <a href="{{ route('family_add') }}" class="btn btn-primary float-right mx-2"><i
+                                class="bi bi-plus-lg"></i> Tambah</a>
+                        <a href="{{ route('family_view_export') }}" class="btn btn-primary float-right"><i
+                                class="bi bi-file-earmark-spreadsheet-fill"></i> Export</a>
                     </div>
                     <div class="card-body">
                         <table class="table datatable">

@@ -59,22 +59,18 @@
                              <div class="col-12 mt-0">
                                  <label><small><strong>Status Baptis</strong></small></label>
                                  <p>
+                                     {{ $person->status_baptis }}
                                      @if ($person->baptis)
-                                         Sudah Baptis
                                          {{ $person->date_of_baptis != null ? date('(d F Y)', strtotime($person->date_of_baptis)) : '' }}
-                                     @else
-                                         Belum Baptis
                                      @endif
                                  </p>
                              </div>
                              <div class="col-12 mt-0">
                                  <label><small><strong>Status Sidi</strong></small></label>
                                  <p>
+                                     {{ $person->status_sidi }}
                                      @if ($person->sidi)
-                                         Sudah Sidi
                                          {{ $person->date_of_sidi != null ? date('(d F Y)', strtotime($person->date_of_sidi)) : '' }}
-                                     @else
-                                         Belum Sidi
                                      @endif
                                  </p>
                              </div>

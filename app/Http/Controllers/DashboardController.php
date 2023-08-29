@@ -6,7 +6,8 @@ use App\Models\FamilyModel;
 use App\Models\PersonModel;
 use App\Models\SectorModel;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
+use App\Exports\DashboardExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
@@ -39,5 +40,11 @@ class DashboardController extends Controller
     {
         $content = view('dashboard.coming-soon');
         return view('main', ['content' => $content]);
+    }
+
+    function export()
+    {
+        $file_name = 'Export Data Dashboard Statistik.xlsx';
+        return Excel::download(new DashboardExport(1),  $file_name);
     }
 }

@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             // AdminSeeder::class,
             // AuthorizationTypeSeeder::class,
             // AuthorizationSeeder::class,
-            SectorSeeder::class,
+            //SectorSeeder::class,
             FamilySeeder::class,
             PersonSeeder::class,
         ]);

@@ -10,17 +10,17 @@
         <td colspan="3"></td>
     </tr>
     @foreach ($gender as $i)
-        @if ($i->gender == 1)
-            <tr>
-                <td></td>
-                <td style="font-weight: 900;margin:auto">Laki-Laki</td>
-                <td>{{ $i->total }}</td>
-            </tr>
-        @endif
         @if ($i->gender == 0)
             <tr>
                 <td></td>
                 <td style="font-weight: 900;margin:auto">Perempuan</td>
+                <td>{{ $i->total }}</td>
+            </tr>
+        @endif
+        @if ($i->gender == 1)
+            <tr>
+                <td></td>
+                <td style="font-weight: 900;margin:auto">Laki-Laki</td>
                 <td>{{ $i->total }}</td>
             </tr>
         @endif
@@ -30,22 +30,32 @@
         <td style="font-weight: 900;margin:auto">Jumlah Jiwa</td>
         <td>{{ $jiwa }}</td>
     </tr>
+    @php
+        $total_banggal = 0;
+        $total_etek = 0;
+    @endphp
     @foreach ($tangga as $i)
         @if ($i->type == 1)
-            <tr>
-                <td></td>
-                <td style="font-weight: 900;margin:auto">Tangga Banggal</td>
-                <td>{{ $i->total }}</td>
-            </tr>
+            @php
+                $total_banggal = $i->total;
+            @endphp
         @endif
         @if ($i->type == 0)
-            <tr>
-                <td></td>
-                <td style="font-weight: 900;margin:auto">Tangga Etek</td>
-                <td>{{ $i->total }}</td>
-            </tr>
+            @php
+                $total_etek = $i->total;
+            @endphp
         @endif
     @endforeach
+    <tr>
+        <td></td>
+        <td style="font-weight: 900;margin:auto">Tangga Banggal</td>
+        <td>{{ $total_banggal }}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="font-weight: 900;margin:auto">Tangga Etek</td>
+        <td>{{ $total_etek }}</td>
+    </tr>
     <tr>
         <td></td>
         <td style="font-weight: 900;margin:auto">Jumlah Keluarga</td>

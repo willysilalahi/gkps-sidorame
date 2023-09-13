@@ -185,6 +185,7 @@
                                 <table class="table table-borderless">
                                     <thead>
                                         <tr>
+                                            <th scope="col">No</th>
                                             <th scope="col">Nama</th>
                                             <th scope="col">Kategorial Seksi</th>
                                             <th scope="col">Sektor</th>
@@ -196,16 +197,17 @@
                                         @foreach ($birthday as $i)
                                             @php
                                                 $tanggalLahir = new DateTime($i->date_of_birth);
-                                                $today = new DateTime();
+                                                $today = new DateTime(date('Y') . substr($i->date_of_birth, 4));
                                                 $umur = $today->diff($tanggalLahir)->y;
                                             @endphp
                                             <tr>
-                                                <th scope="row"><a href="{{ route('person_view_detail', $i->id) }}"
+                                                <th scope="row">{{ $loop->iteration }}</th>
+                                                <td scope="row"><a href="{{ route('person_view_detail', $i->id) }}"
                                                         target="_blank">{{ $i->name }}</a></th>
                                                 <td>{{ $i->categorial_text }}</td>
                                                 <td>{{ $i->family != null ? $i->family->sector->name : '-' }}</td>
                                                 <td>{{ date('d F Y', strtotime($i->date_of_birth)) }}</td>
-                                                <td class="fw-bold">{{ $umur + 1 }} Tahun</td>
+                                                <td class="fw-bold">{{ $umur }} Tahun</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

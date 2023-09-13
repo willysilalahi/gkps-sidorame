@@ -64,7 +64,7 @@ class ImportJemaatCommand extends Command
                 'family_id' => $family->id,
                 'name' => $i[1],
                 'gender' => $i[2],
-                'date_of_birth' => Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject((int)$i[3]))->format('Y-m-d'),
+                'date_of_birth' => ($i[3] != null) ? Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject((int)$i[3]))->format('Y-m-d') : null,
                 'categorial' => $i[4]
             ]);
             $this->info('Jemaat dengan nama ' . $person->name . ' sudah ditambahkan!');

@@ -74,7 +74,7 @@
     @foreach ($birthday as $i)
         @php
             $tanggalLahir = new DateTime($i->date_of_birth);
-            $today = new DateTime();
+            $today = new DateTime(date('Y') . substr($i->date_of_birth, 4));
             $umur = $today->diff($tanggalLahir)->y;
         @endphp
         <tr>
@@ -83,7 +83,7 @@
             <td>{{ $i->categorial_text }}</td>
             <td>{{ $i->sector_name }}</td>
             <td>{{ date('d F Y', strtotime($i->date_of_birth)) }}</td>
-            <td>{{ $umur + 1 }} Tahun</td>
+            <td>{{ $umur }} Tahun</td>
         </tr>
     @endforeach
 </table>

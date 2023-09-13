@@ -25,13 +25,13 @@ class PerSectorExport implements FromView, ShouldAutoSize
             $qr->where('sectors_id', $this->id);
         })->select('gender', DB::raw('count(*) as total'))
             ->groupBy('gender')
-            ->get();
+            ->orderBy('gender', 'desc')->get();
         $data['jiwa'] = PersonModel::whereHas('family', function ($qr) {
             $qr->where('sectors_id', $this->id);
         })->count();
         $data['tangga'] = FamilyModel::where('sectors_id', $this->id)->select('type', DB::raw('count(*) as total'))
             ->groupBy('type')
-            ->get();
+            ->orderBy('sectors_id', 'desc')->get();
         $data['keluarga'] = FamilyModel::where('sectors_id', $this->id)->count();
         $data['seksi'] = PersonModel::whereHas('family', function ($qr) {
             $qr->where('sectors_id', $this->id);

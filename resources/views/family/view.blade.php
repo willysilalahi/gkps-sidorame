@@ -49,8 +49,11 @@
                                                 class="btn btn-sm btn-dark"><i class="bi bi-eye text-white"></i></a>
                                             <a href="{{ route('family_edit', $i->id) }}" class="btn btn-sm btn-dark"><i
                                                     class="bi bi-pencil"></i></a>
-                                            <button class="btn btn-sm btn-danger" type="button"><i
+                                            <button onclick="deleteData({{ $i->id }})"
+                                                class="btn btn-sm btn-danger" type="button"><i
                                                     class="bi bi-trash3"></i></button>
+                                            <button onclick="clearData({{ $i->id }})"
+                                                class="btn btn-sm btn-danger" type="button">Clear</button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -64,3 +67,68 @@
         </div>
     </section>
 </main><!-- End #main -->
+<script>
+    function deleteData(id) {
+        swal({
+                title: "Yakin gak?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+                    $.ajax({
+                        url: `/family/${id}`,
+                        method: 'DELETE',
+                        data: {
+                            _token: CSRF_TOKEN
+                        },
+                        success: function(res, data) {
+                            if (res.status == true) {
+                                swal("Success", "Keluarga berhasil dihapus!", "success");
+                                location.reload();
+                            } else {
+                                tata.error('Waduhhh', res.error);
+                            }
+                        },
+                        error: function(error) {
+                            tata.error('Ooopss', 'Waduhh ada yang salah!');
+                        }
+                    })
+                } else {}
+            });
+    }
+
+    function clearData(id) {
+        swal({
+                title: "Yakin kan?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+                    $.ajax({
+                        url: `/family/clear/${id}`,
+                        method: 'DELETE',
+                        data: {
+                            _token: CSRF_TOKEN
+                        },
+                        success: function(res, data) {
+                            if (res.status == true) {
+                                swal("Success", "Keluarga & jemaat berhasil dihapus!", "success");
+                                location.reload();
+                            } else {
+                                tata.error('Waduhhh', res.error);
+                            }
+                        },
+                        error: function(error) {
+                            tata.error('Ooopss', 'Waduhh ada yang salah!');
+                        }
+                    })
+                } else {}
+            });
+    }
+</script>

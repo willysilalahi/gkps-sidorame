@@ -5,10 +5,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DeletedPersonController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SectorController;
+use App\Models\PersonModel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // $cek = PersonModel::where('date_of_birth', '!=', null)->get();
+    // dd($cek);
     return redirect('dashboard');
 });
 
@@ -83,6 +87,8 @@ Route::group(['middleware' => ['auth', 'authorization']], function () {
         Route::get('/{id}/edit', [FamilyController::class, 'editView'])->name('family_edit');
         Route::post('/', [FamilyController::class, 'create'])->name('family_add_post');
         Route::patch('/{id}', [FamilyController::class, 'update'])->name('family_edit_patch');
+        Route::delete('/{id}', [FamilyController::class, 'delete'])->name('family_delete');
+        Route::delete('/clear/{id}', [FamilyController::class, 'clear'])->name('family_delete_clear');
     });
 
     Route::prefix('/person')->group(function () {
@@ -93,6 +99,14 @@ Route::group(['middleware' => ['auth', 'authorization']], function () {
         Route::get('/{id}/edit', [PersonController::class, 'editView'])->name('person_edit');
         Route::post('/', [PersonController::class, 'create'])->name('person_add_post');
         Route::patch('/{id}', [PersonController::class, 'update'])->name('person_edit_patch');
+        Route::delete('/{id}', [PersonController::class, 'delete'])->name('person_delete');
+    });
+
+    Route::prefix('/deleted-person')->group(function () {
+        Route::get('/', [DeletedPersonController::class, 'view'])->name('deleted-person_view');
+        Route::get('/{id}/edit', [DeletedPersonController::class, 'editView'])->name('deleted-person_edit');
+        Route::patch('/{id}', [DeletedPersonController::class, 'update'])->name('deleted-person_edit_patch');
+        Route::patch('/restore/{id}', [DeletedPersonController::class, 'restore'])->name('deleted-person_edit_restore');
     });
 
     Route::prefix('/activity')->group(function () {

@@ -47,6 +47,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">Status Baptis</label>
                                 <select name="baptis" class="form-select">
+                                    <option value="">Pilih</option>
                                     <option value="1">Sudah Baptis</option>
                                     <option value="0">Belum Baptis</option>
                                 </select>
@@ -58,6 +59,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">Status Sidi</label>
                                 <select name="sidi" class="form-select">
+                                    <option value="">Pilih</option>
                                     <option value="1">Sudah Sidi</option>
                                     <option value="0">Belum Sidi</option>
                                 </select>

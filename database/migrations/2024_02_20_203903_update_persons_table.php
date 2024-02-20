@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFamilyHasPersonTable extends Migration
+class UpdatePersonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateFamilyHasPersonTable extends Migration
      */
     public function up()
     {
-        Schema::create('family_has_person', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('persons', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +25,6 @@ class CreateFamilyHasPersonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('family_has_person');
+        //
     }
 }

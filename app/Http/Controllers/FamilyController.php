@@ -7,6 +7,7 @@ use App\Models\FamilyModel;
 use App\Models\PersonModel;
 use App\Models\SectorModel;
 use App\Exports\FamilyExport;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
 class FamilyController extends Controller
@@ -94,5 +95,48 @@ class FamilyController extends Controller
             }
         }
         return redirect()->route('family_view');
+    }
+
+    function delete($id)
+    {
+        DB::beginTransaction();
+        try {
+            $update = [
+                'family_id' => null
+            ];
+            PersonModel::where('family_id', $id)->update($update);
+            FamilyModel::find($id)->delete();
+            DB::commit();
+            $message = [
+                'status' => true
+            ];
+        } catch (\Exception $exception) {
+            DB::rollback();
+            $message = [
+                'status' => false,
+                'error' => "Something Wrong"
+            ];
+        }
+        return response()->json($message);
+    }
+
+    function clear($id)
+    {
+        DB::beginTransaction();
+        try {
+            PersonModel::where('family_id', $id)->delete();
+            FamilyModel::find($id)->delete();
+            DB::commit();
+            $message = [
+                'status' => true
+            ];
+        } catch (\Exception $exception) {
+            DB::rollback();
+            $message = [
+                'status' => false,
+                'error' => "Something Wrong"
+            ];
+        }
+        return response()->json($message);
     }
 }

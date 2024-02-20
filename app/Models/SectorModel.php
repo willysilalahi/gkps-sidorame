@@ -13,7 +13,7 @@ class SectorModel extends Model
 
     function family()
     {
-        return $this->hasMany(FamilyModel::class, 'sectors_id', 'id');
+        return $this->hasMany(FamilyModel::class, 'sectors_id', 'id')->withTrashed();
     }
 
     public function getTotalPersonAttribute()

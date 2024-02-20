@@ -6,6 +6,7 @@ use App\Http\Requests\PersonRequest;
 use App\Models\PersonModel;
 use App\Repository\PersonRepository;
 use App\Exports\PersonExport;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PersonController extends Controller
@@ -83,5 +84,24 @@ class PersonController extends Controller
         ];
         $person->update($data);
         return redirect()->route('person_view');
+    }
+
+    function delete($id)
+    {
+        DB::beginTransaction();
+        try {
+            PersonModel::find($id)->delete();
+            DB::commit();
+            $message = [
+                'status' => true
+            ];
+        } catch (\Exception $exception) {
+            DB::rollback();
+            $message = [
+                'status' => false,
+                'error' => "Something Wrong"
+            ];
+        }
+        return response()->json($message);
     }
 }

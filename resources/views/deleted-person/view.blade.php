@@ -26,10 +26,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">No</th>
+                                    <th scope="col">ID</th>
                                     <th scope="col">Nama</th>
-                                    <th scope="col">Seksi</th>
-                                    <th scope="col" class="text-center">Jenis Kelamin</th>
-                                    <th scope="col">T.Tanggal Lahir</th>
                                     <th scope="col">Sektor</th>
                                     <th scope="col" class="text-center">Kode Keluarga</th>
                                     <th scope="col" width="15%">Action</th>
@@ -40,10 +38,8 @@
                                     <tr>
                                         <th scope="row" class="text-center"><small>{{ $loop->iteration }}</small>
                                         </th>
+                                        <td><small>{{ '#' . $i->id }}</small></td>
                                         <td><small>{{ $i->name }}</small></td>
-                                        <td><small>{{ $i->categorial_text }}</small></td>
-                                        <td><small>{{ $i->gender_text }}</small></td>
-                                        <td><small>{{ $i->birth_text }}</small></td>
                                         <td class="text-center">
                                             <small>
                                                 @if ($i->family != null)
@@ -64,11 +60,9 @@
                                         <td>
                                             <a href="{{ route('person_view_detail', $i->id) }}"
                                                 class="btn btn-sm btn-dark"><i class="bi bi-eye text-white"></i></a>
-                                            <a href="{{ route('person_edit', $i->id) }}" class="btn btn-sm btn-dark"><i
-                                                    class="bi bi-pencil"></i></a>
-                                            <button onclick="deleteData({{ $i->id }})"
-                                                class="btn btn-sm btn-danger" type="button"><i
-                                                    class="bi bi-trash3"></i></button>
+                                            <a href="javascript:void(0)" onclick="restore({{ $i->id }})"
+                                                class="btn btn-sm btn-dark"><i class="bi bi-arrow-clockwise"></i>
+                                                Restore</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -83,9 +77,9 @@
     </section>
 </main><!-- End #main -->
 <script>
-    function deleteData(id) {
+    function restore(id) {
         swal({
-                title: "Yakin gak?",
+                title: "Yakin ini kan?",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
@@ -94,14 +88,15 @@
                 if (willDelete) {
                     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                     $.ajax({
-                        url: `/person/${id}`,
-                        method: 'DELETE',
+                        url: `/deleted-person/restore/${id}`,
+                        method: 'PATCH',
                         data: {
                             _token: CSRF_TOKEN
                         },
                         success: function(res, data) {
                             if (res.status == true) {
-                                swal("Success", "Jemaat berhasil dihapus!", "success");
+                                swal("Success", "Jemaat berhasil di restore dengan tidak ada keluarga!",
+                                    "success");
                                 location.reload();
                             } else {
                                 tata.error('Waduhhh', res.error);

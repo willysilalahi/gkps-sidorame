@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use PDO;
 
 class PersonModel extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $table = 'persons';
     protected $fillable = [
         'family_id',
@@ -26,7 +27,7 @@ class PersonModel extends Model
 
     function family()
     {
-        return $this->belongsTo(FamilyModel::class, 'family_id', 'id');
+        return $this->belongsTo(FamilyModel::class, 'family_id', 'id')->withTrashed();
     }
 
 
